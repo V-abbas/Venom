@@ -8992,7 +8992,7 @@ data = {
 {text = 'Communication Source', url = 't.me/wKwvbot'}, 
 },
 {
-{text = 'Developer Source !', url = 't.me/wKwvv'}, 
+{text = 'Developer Source !', url = 't.me/zZz_1Z'}, 
 },
 }
 }
@@ -9012,13 +9012,15 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = msg.sender.user_id..'/help1'}, {text = '{ 𝟐 }', data = msg.sender.user_id..'/help2'}, 
+{text = '{ I }', data = msg.sender.user_id..'/help1'}, {text = '{ II }', data = msg.sender.user_id..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = msg.sender.user_id..'/help3'}, {text = '{ 𝟒 }', data = msg.sender.user_id..'/help4'}, 
+{text = '{ III }', data = msg.sender.user_id..'/help3'}, {text = '{ Iᐯ }', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = msg.sender.user_id..'/help5'}, {text = '{ الالعاب }', data = msg.sender.user_id..'/help6'}, {text = '{ التسليه }', data = msg.sender.user_id..'/help7'}, 
+{text = '{ ᐯ }', data = msg.sender.user_id..'/help5'},
+      
+      {text = '{ Games }', data = msg.sender.user_id..'/help6'}, {text = '{ Funny }', data = msg.sender.user_id..'/help7'}, 
 },
 {
 {text = '{ اوامر القفل / الفتح }', data = msg.sender.user_id..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = msg.sender.user_id..'/listallAddorrem'}, 
