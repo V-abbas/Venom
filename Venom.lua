@@ -3386,7 +3386,7 @@ end
 if text and text:match("^رفع (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^رفع (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.id.user_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌔︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
