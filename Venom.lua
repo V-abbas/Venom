@@ -873,6 +873,7 @@ end
 return JoinChannel
 end
 
+
 function File_Bot_Run(msg,data)  
 local msg_chat_id = msg.chat_id
 local msg_reply_id = msg.reply_to_message_id
@@ -8992,7 +8993,7 @@ data = {
 {text = 'Communication Source', url = 't.me/wKwvbot'}, 
 },
 {
-{text = 'Developer Source !', url = 't.me/zZz_1Z'}, 
+{text = 'Developer Source !', url = 't.me/wKwvv'}, 
 },
 }
 }
@@ -9012,13 +9013,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ I }', data = msg.sender.user_id..'/help1'}, {text = '{ II }', data = msg.sender.user_id..'/help2'}, 
+{text = '{ 𝟏 }', data = msg.sender.user_id..'/help1'}, {text = '{ 𝟐 }', data = msg.sender.user_id..'/help2'}, 
 },
 {
-{text = '{ III }', data = msg.sender.user_id..'/help3'}, {text = '{ Iᐯ }', data = msg.sender.user_id..'/help4'}, 
+{text = '{ 𝟑 }', data = msg.sender.user_id..'/help3'}, {text = '{ 𝟒 }', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = '{ ᐯ }', data = msg.sender.user_id..'/help5'},   {text = '{ Games }', data = msg.sender.user_id..'/help6'}, {text = '{ Funny }', data = msg.sender.user_id..'/help7'}, 
+{text = '{ 𝟓 }', data = msg.sender.user_id..'/help5'}, {text = '{ الالعاب }', data = msg.sender.user_id..'/help6'}, {text = '{ التسليه }', data = msg.sender.user_id..'/help7'}, 
 },
 {
 {text = '{ اوامر القفل / الفتح }', data = msg.sender.user_id..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = msg.sender.user_id..'/listallAddorrem'}, 
@@ -10918,13 +10919,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ I }', data = IdUser..'/help1'}, {text = '{ II }', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ III }', data = IdUser..'/help3'}, {text = '{ Iᐯ }', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ ᐯ }', data = IdUser..'/help5'}, {text = '{ Games }', data = IdUser..'/help6'}, {text = '{ Funny }', data = IdUser..'/help7'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
 },
 {
 {text = '{ اوامر القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
