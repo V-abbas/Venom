@@ -9018,9 +9018,7 @@ data = {
 {text = '{ III }', data = msg.sender.user_id..'/help3'}, {text = '{ Iᐯ }', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = '{ ᐯ }', data = msg.sender.user_id..'/help5'},
-      
-      {text = '{ Games }', data = msg.sender.user_id..'/help6'}, {text = '{ Funny }', data = msg.sender.user_id..'/help7'}, 
+{text = '{ ᐯ }', data = msg.sender.user_id..'/help5'},   {text = '{ Games }', data = msg.sender.user_id..'/help6'}, {text = '{ Funny }', data = msg.sender.user_id..'/help7'}, 
 },
 {
 {text = '{ اوامر القفل / الفتح }', data = msg.sender.user_id..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = msg.sender.user_id..'/listallAddorrem'}, 
@@ -10920,13 +10918,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
+{text = '{ I }', data = IdUser..'/help1'}, {text = '{ II }', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
+{text = '{ III }', data = IdUser..'/help3'}, {text = '{ Iᐯ }', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, {text = '{ التسليه }', data = IdUser..'/help7'}, 
+{text = '{ ᐯ }', data = IdUser..'/help5'}, {text = '{ Games }', data = IdUser..'/help6'}, {text = '{ Funny }', data = IdUser..'/help7'}, 
 },
 {
 {text = '{ اوامر القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
