@@ -9729,6 +9729,7 @@ data = {
 {text = ' 🧑🏻‍💻لشراء بوت ', url = 't.me/zZz_1Z'},
 },
 }
+}
 return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
 else
 local reply_markup = LuaTele.replyMarkup{
@@ -9743,6 +9744,7 @@ data = {
 {
 }{text = ' 🧑🏻‍💻لشراء بوت ', url = 't.me/zZz_1Z'},
 },
+}
 }
 return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Venom.."Venom:Start:Bot"),"md",false, false, false, false, reply_markup)
 end
