@@ -4025,6 +4025,16 @@ if TextMsg == 'الترحيب' then
 Redis:set(Venom.."Venom:Status:Welcome"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم تفعيل الترحيب ","md",true)
 end
+if text and (text == "غنيلي" or text == "↫ غنيلي ✯") and SourceCh(msg) and not Redis:get(Thebesso..'besso:sh3ir:Abs'..msg.chat_id) then
+Abs = math.random(2,140); 
+local Text ='*✯‍︙تم اختيار الشعر الاغنيه فقط*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '- قناة السورس .',url="t.me/venom_source"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/fhfff/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if TextMsg == 'الايدي' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
