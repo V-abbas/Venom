@@ -9723,7 +9723,7 @@ data = {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'قناه السورس', url = 't.me/venom_source'}, 
+{text = 'قناه السورس', url = 't.me/venom_source'}, {text = ' 🧑🏻‍💻لشراء بوت ', url = 't.me/zZz_1Z'},
 },
 }
 }
