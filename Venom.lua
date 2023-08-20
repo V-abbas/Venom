@@ -4030,7 +4030,7 @@ Abs = math.random(2,140);
 local Text ='*✯‍︙تم اختيار الشعر الاغنيه فقط*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- قناة السورس .',url="t.me/venom_source"}},
+{{text = '- قناة السورس .',url="t.me/fhfff"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/fhfff/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
