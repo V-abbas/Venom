@@ -9226,7 +9226,7 @@ local NameBots = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
-if text == " بوت " then
+if text == "بوت" then
 local NamesBot = (Redis:get(Venom.."Venom:Name:Bot") or "Venom")
 local BotName = {
 "باوع لك خليني احبك وصيحلي باسمي "..NamesBot,
