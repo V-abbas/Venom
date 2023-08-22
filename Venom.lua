@@ -2610,13 +2610,6 @@ end
 if not Redis:get(Venom.."Venom:Status:Id"..msg_chat_id) then
 return false
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- UserInfo.username  ', },
-},
-}
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local UserId = msg.sender.user_id
@@ -2697,6 +2690,13 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n⌔︙تعديلاتك : '..TotalEdit..
 '\n⌔︙تفاعلك : '..TotalMsgT..
 '*',"md",true) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '- UserInfo.username  ', },
+},
+}
 end
 end
 end
