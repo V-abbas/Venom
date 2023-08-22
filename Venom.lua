@@ -2609,6 +2609,13 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك �
 end
 if not Redis:get(Venom.."Venom:Status:Id"..msg_chat_id) then
 return false
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '- UserInfo.username  ', },
+},
+}
 end
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
