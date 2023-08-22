@@ -2617,7 +2617,6 @@ data = {
 {text = '- UserInfo.username  ', },
 },
 }
-end
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local UserId = msg.sender.user_id
