@@ -2611,14 +2611,6 @@ if not Redis:get(Venom.."Venom:Status:Id"..msg_chat_id) then
 return false
 end
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- UserInfo.username  ', },
-},
-}
-}
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local UserId = msg.sender.user_id
 local RinkBot = msg.Name_Controller
