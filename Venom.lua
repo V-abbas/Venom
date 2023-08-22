@@ -2631,14 +2631,6 @@ Get_Is_Id = Redis:get(Venom.."Venom:Set:Id:Group"..msg_chat_id)
 if Redis:get(Venom.."Venom:Status:IdPhoto"..msg_chat_id) then
 if Get_Is_Id then
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- UserInfo.username  ', },
-},
-}
-}
 local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
 local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
 local Get_Is_Id = Get_Is_Id:gsub('#msgs',TotalMsg) 
@@ -2679,14 +2671,6 @@ end
 else
 if Get_Is_Id then
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- UserInfo.username  ', },
-},
-}
-}
 local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
 local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
 local Get_Is_Id = Get_Is_Id:gsub('#msgs',TotalMsg) 
@@ -2722,14 +2706,6 @@ else
 UserInfousername = 'لا يوجد'
 end
 local UserId = Message_Reply.sender.user_id
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- UserInfo.username  ', },
-},
-}
-}
 local RinkBot = Controller(msg_chat_id,Message_Reply.sender.user_id)
 local TotalMsg = Redis:get(Venom..'Venom:Num:Message:User'..msg_chat_id..':'..Message_Reply.sender.user_id) or 0
 local TotalEdit = Redis:get(Venom..'Venom:Num:Message:Edit'..msg_chat_id..Message_Reply.sender.user_id) or 0
@@ -2756,14 +2732,6 @@ if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌔︙عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
 end
 local UserId = UserId_Info.id
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- UserInfo.username  ', },
-},
-}
-}
 local RinkBot = Controller(msg_chat_id,UserId_Info.id)
 local TotalMsg = Redis:get(Venom..'Venom:Num:Message:User'..msg_chat_id..':'..UserId_Info.id) or 0
 local TotalEdit = Redis:get(Venom..'Venom:Num:Message:Edit'..msg_chat_id..UserId_Info.id) or 0
