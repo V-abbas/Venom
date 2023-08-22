@@ -2609,6 +2609,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔︙عليك الاشتراك �
 end
 if not Redis:get(Venom.."Venom:Status:Id"..msg_chat_id) then
 return false
+end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
