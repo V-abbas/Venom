@@ -880,7 +880,7 @@ local msg_reply_id = msg.reply_to_message_id
 local msg_user_send_id = msg.sender.user_id
 local msg_id = msg.id
 local text = nil
-Redis:incr(Venom..'Venom:Num:Message:User'..msg.chat_id..':'..msg.sender.user_id) 
+Redis:incr(Venom..'Venom:Num:Message:User'..msg.chat_id..':'..msg.sender.id.user_id) 
 if msg.date and msg.date < tonumber(os.time() - 15) then
 print("->> Old Message End <<-")
 return false
