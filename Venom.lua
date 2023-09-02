@@ -5644,9 +5644,9 @@ end
 end
 
 if text == 'تفعيل النداء التلقائي' or TextMsg == 'تفعيل لتاك التلقائي' then
-if redis:get(Venom..":settings:tagGr"..msg.chat_id) then
+if Redis:get(Venom..":settings:tagGr"..msg.chat_id) then
 Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." بنجاح .*").by
-redis:del(Venom..":settings:tagGr"..msg.chat_id)
+Redis:del(Venom..":settings:tagGr"..msg.chat_id)
 else
 Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*").yu
 end
