@@ -5661,25 +5661,6 @@ Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*"
 end
 bot.sendText(msg.chat_id,msg.id,Text,"md",true)
 end
-if not Redis:get(bot_id.."settings:tagGr"..msg.chat_id" then)
-if msg and not Redis:get(bot_id..":"..msg.chat_id..":tag") then
-local Info = bot.searchChatMembers(msg.chat_id, "*", 200)
-local members = Info.members
-local InfoUser = bot.getUser(members[math.random(#members)].member_id.user_id)
-local texting = {"⌔ : تّعٌأّلَ يحلو وِيِّنِ طامس لك🥺💗","⌔ : تعال شفنالك صاكه راح نزوجك ورده 🙃💗","⌔ : مشتاقين لتطمس حبيبي 🥰","⌔ : ومن غبتي عني الهم كتلني 💗😂","⌔ : اجي ابوس عيونك وتحبني ونرتبط 🥺😓","⌔ : اجي ابوس حيلك وتطيني تعبك 🥺🥺","⌔ : اللهم جمال عيونك دوخني وبهذلن حالي ","⌔ : اذا تطمس بعد اطرك 🙃💗",}
-tagname = InfoUser.first_name.."ْ"
-tagname = tagname:gsub('"',"")
-tagname = tagname:gsub('"',"")
-tagname = tagname:gsub("`","")
-tagname = tagname:gsub("*","") 
-tagname = tagname:gsub("_","")
-tagname = tagname:gsub("]","")
-tagname = tagname:gsub("[[]","")
-usr = " ~ ["..tagname.."](tg://user?id="..InfoUser.id..")"
-Redis:setex(bot_id..":"..msg.chat_id..":tag",30,true)
-bot.sendText(msg.chat_id,0,'*'..texting[math.random(#texting)]..'*'..usr,'md') 
-end  
-end
 
 
 if text == 'كشف البوتات' then
