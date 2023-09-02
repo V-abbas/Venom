@@ -5662,7 +5662,7 @@ end
 bot.sendText(msg.chat_id,msg.id,Text,"md",true)
 end
 if not Redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
-if msg and not redis:get(bot_id..":"..msg.chat_id..":tag") then
+if msg and not Redis:get(bot_id..":"..msg.chat_id..":tag") then
 local Info = bot.searchChatMembers(msg.chat_id, "*", 200)
 local members = Info.members
 local InfoUser = bot.getUser(members[math.random(#members)].member_id.user_id)
@@ -5676,7 +5676,7 @@ tagname = tagname:gsub("_","")
 tagname = tagname:gsub("]","")
 tagname = tagname:gsub("[[]","")
 usr = " ~ ["..tagname.."](tg://user?id="..InfoUser.id..")"
-redis:setex(bot_id..":"..msg.chat_id..":tag",30,true)
+Redis:setex(bot_id..":"..msg.chat_id..":tag",30,true)
 bot.sendText(msg.chat_id,0,'*'..texting[math.random(#texting)]..'*'..usr,'md') 
 end  
 end
