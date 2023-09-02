@@ -5643,6 +5643,44 @@ end
 end
 end
 
+if text == 'تفعيل النداء التلقائي' or TextMsg == 'تفعيل التاك التلقائي' then
+if redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
+Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." بنجاح .*").by
+redis:del(bot_id..":"..msg.chat_id..":settings:tagGr")  
+else
+Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*").yu
+end
+bot.sendText(msg.chat_id,msg.id,Text,"md",true)
+end
+if text == 'تعطيل النداء التلقائي' or TextMsg == 'تعطيل التااك التلقائي' then
+if not redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
+redis:set(bot_id..":"..msg.chat_id..":settings:tagGr",true)  
+Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." بنجاح .*").by
+else
+Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*").yu
+end
+bot.sendText(msg.chat_id,msg.id,Text,"md",true)
+end
+if not redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
+if msg and not redis:get(bot_id..":"..msg.chat_id..":tag") then
+local Info = bot.searchChatMembers(msg.chat_id, "*", 200)
+local members = Info.members
+local InfoUser = bot.getUser(members[math.random(#members)].member_id.user_id)
+local texting = {"⌔ : تّعٌأّلَ يحلو وِيِّنِ طامس لك🥺💗","⌔ : تعال شفنالك صاكه راح نزوجك ورده 🙃💗","⌔ : مشتاقين لتطمس حبيبي 🥰","⌔ : ومن غبتي عني الهم كتلني 💗😂","⌔ : اجي ابوس عيونك وتحبني ونرتبط 🥺😓","⌔ : اجي ابوس حيلك وتطيني تعبك 🥺🥺","⌔ : اللهم جمال عيونك دوخني وبهذلن حالي ","⌔ : اذا تطمس بعد اطرك 🙃💗",}
+tagname = InfoUser.first_name.."ْ"
+tagname = tagname:gsub('"',"")
+tagname = tagname:gsub('"',"")
+tagname = tagname:gsub("`","")
+tagname = tagname:gsub("*","") 
+tagname = tagname:gsub("_","")
+tagname = tagname:gsub("]","")
+tagname = tagname:gsub("[[]","")
+usr = " ~ ["..tagname.."](tg://user?id="..InfoUser.id..")"
+redis:setex(bot_id..":"..msg.chat_id..":tag",30,true)
+bot.sendText(msg.chat_id,0,'*'..texting[math.random(#texting)]..'*'..usr,'md') 
+end  
+end
+
 
 if text == 'كشف البوتات' then
 if not msg.Managers then
