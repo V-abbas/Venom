@@ -5643,25 +5643,15 @@ end
 end
 end
 
-if text == 'تفعيل النداء التلقائي' or TextMsg == 'تفعيل التاك التلقائي' then
-if redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
+if text == 'تفعيل النداء التلقائي' or TextMsg == 'تفعيل لتاك التلقائي' then
+if redis:get(Venom..":settings:tagGr"..msg.chat_id) then
 Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." بنجاح .*").by
-redis:del(bot_id..":"..msg.chat_id..":settings:tagGr")  
+Redis:del(Venom..":settings:tagGr"..msg.chat_id)
 else
 Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*").yu
 end
 bot.sendText(msg.chat_id,msg.id,Text,"md",true)
 end
-if text == 'تعطيل النداء التلقائي' or TextMsg == 'تعطيل التااك التلقائي' then
-if not redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
-redis:set(bot_id..":"..msg.chat_id..":settings:tagGr",true)  
-Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." بنجاح .*").by
-else
-Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*").yu
-end
-bot.sendText(msg.chat_id,msg.id,Text,"md",true)
-end
-
 
 if text == 'كشف البوتات' then
 if not msg.Managers then
