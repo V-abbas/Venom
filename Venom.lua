@@ -5646,7 +5646,6 @@ end
 if text == 'تفعيل النداء التلقائي' or TextMsg == 'تفعيل لتاك التلقائي' then
 Redis:set(Venom.."settings:tagGr"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"*⌔ : تم "..text.." بنجاح .*").Reply,"md",true)  
-Redis:del(Venom..":settings:tagGr"..msg.chat_id)
 end
 bot.sendText(msg.chat_id,msg.id,Text,"md",true)
 end
