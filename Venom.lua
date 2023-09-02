@@ -5643,12 +5643,6 @@ end
 end
 end
 
-if text == 'تفعيل النداء التلقائي' or TextMsg == 'تفعيل لتاك التلقائي' then
-if not Redis:get(Venom.."settings:tagGr"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"*⌔ : تم "..text.." بنجاح .*").Reply,"md",true)  
-end
-bot.sendText(msg.chat_id,msg.id,Text,"md",true)
-end
 
 if text == 'كشف البوتات' then
 if not msg.Managers then
