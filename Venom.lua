@@ -5661,7 +5661,7 @@ Text = Reply_Status(msg.sender_id.user_id,"*⌔ : تم "..text.." سابقا .*"
 end
 bot.sendText(msg.chat_id,msg.id,Text,"md",true)
 end
-if not redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
+if not Redis:get(bot_id..":"..msg.chat_id..":settings:tagGr") then
 if msg and not redis:get(bot_id..":"..msg.chat_id..":tag") then
 local Info = bot.searchChatMembers(msg.chat_id, "*", 200)
 local members = Info.members
