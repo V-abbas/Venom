@@ -9672,55 +9672,21 @@ end
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'مج','مجوهراتي')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'تع','تعين الايدي')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'تاك','تاك للكل')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'امر','اضف امر')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'مطور','رفع مطور')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','مسح رسائلي')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..',,','مسح المكتومين')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','ردود المدير')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'قق','قفل الاشعارات')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'فف','فتح الاشعارات ')
-Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'تنز','تنزيل جميع الرتب')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
 Redis:set(Venom.."Venom:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
-⌔︙⌁︙تم ترتيب الاوامر بالشكل التالي ↫ ⤈
-⌁︙ايدي ↫ ا 
-⌁︙رفع مميز ↫ م 
-⌁︙رفع ادمن ↫ اد 
-⌁︙رفع مدير ↫ مد  
-⌁︙رفع منشى ↫ من  
-⌁︙رفع منشئ الاساسي ↫ اس  
-⌁︙رفع مطور ↫ مط 
-⌁︙رفع مطور ثانوي ↫ ثانوي 
-⌁︙تنزيل الكل ↫ تك 
-⌁︙تعطيل الايدي بالصوره ↫ تعط 
-⌁︙تفعيل الايدي بالصوره ↫ تفع 
-⌁︙الرابط ↫ ر 
-⌁︙ردود المدير ↫ رر 
-⌁︙مسح المكتومين ↫ ،، 
-⌁︙اضف رد ↫ رد 
-⌁︙اضف امر ↫ امر
-⌁︙مسح سحكاتي ↫ سح 
-⌁︙مسح رسائلي ↫ رس
-⌁︙نقاطي ↫ ن
-⌁︙مسح قائمه العام ↫ #
-⌁︙رفع القيود ↫ رف
-⌁︙الغاء حظر ↫ الغ
-⌁︙تغيير الايدي ↫ تغ
-⌁︙تاك للكل ↫ تاك
-⌁︙قفل الاشعارات ↫ قق
-⌁︙فتح الاشعارات ↫ فف
-⌁︙تنزيل جميع الرتب ↫ تنز
+⌔︙تم ترتيب الاوامر بالشكل التالي •
+- ايدي - ا •
+- مميز - م •
+- ادمن - اد •
+- مدير - مد • 
+- منشى - من •
+- المنشئ الاساسي - اس  •
+- تعطيل الايدي بالصوره - تعط •
+- تفعيل الايدي بالصوره - تفع •
 *]],"md")
 end
 
@@ -9757,10 +9723,7 @@ data = {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'قناه السورس', url = 't.me/venom_source'},
-},
-{
-{text = ' لشراء بوت ', url = 't.me/zZz_1Z'},
+{text = 'قناه السورس', url = 't.me/venom_source'}, 
 },
 }
 }
@@ -9773,10 +9736,7 @@ data = {
 {text = '➕ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'قناه السورس', url = 't.me/venom_source'},
-},
-{
-{text = ' لشراء بوت ', url = 't.me/zZz_1Z'},
+{text = 'قناه السورس', url = 't.me/venom_source'}, 
 },
 }
 }
