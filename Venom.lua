@@ -5621,26 +5621,44 @@ LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙تم ترقيه - ('..y..') ادم
 end
 
 if text == 'المالك' then
-if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌔︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
-local List_Members = Info_Members.members
-for k, v in pairs(List_Members) do
-if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.first_name == "" then
-LuaTele.sendText(msg_chat_id,msg_id,"*⌔︙اوبس , المالك حسابه محذوف *","md",true)  
-return false
-end
-if UserInfo.username then
-Creator = "*⌔︙مالك المجموعه : @"..UserInfo.username.."*\n"
-else
-Creator = "⌔︙مالك المجموعه : *["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n"
-end
-return LuaTele.sendText(msg_chat_id,msg_id,Creator,"md",true)  
-end
-end
+  if msg.can_be_deleted_for_all_users == false then
+    return LuaTele.sendText(msg_chat_id, msg_id,
+      "\n*⌔︙عذرًا، البوت ليس مشرفًا في المجموعة. يرجى ترقيته وتفعيل الصلاحيات له.*",
+      "md", true)
+  end
+
+  local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
+  if not Info_Members or not Info_Members.members then
+    return LuaTele.sendText(msg_chat_id, msg_id, "⌔︙تعذر الحصول على قائمة المدراء.", "md", true)
+  end
+
+  for _, member in pairs(Info_Members.members) do
+    if member.status.luatele == "chatMemberStatusCreator" then
+      local UserInfo = LuaTele.getUser(member.member_id.user_id)
+
+      if not UserInfo or UserInfo.first_name == "" then
+        return LuaTele.sendText(msg_chat_id, msg_id, "*⌔︙أوبس، المالك حسابه محذوف.*", "md", true)
+      end
+
+      local name = UserInfo.first_name
+      local user_id = UserInfo.id
+      local username = UserInfo.username
+
+      local mention
+      if username then
+        mention = "*⌔︙مالك المجموعة: @" .. username .. "*"
+      else
+        mention = "*⌔︙مالك المجموعة:* [" .. name .. "](tg://user?id=" .. user_id .. ")"
+      end
+
+      -- إرسال الصورة (إن وُجدت)
+      if UserInfo.photo and UserInfo.photo.big and UserInfo.photo.big.id then
+        return LuaTele.sendPhoto(msg_chat_id, msg_id, UserInfo.photo.big.id, mention, "md")
+      else
+        return LuaTele.sendText(msg_chat_id, msg_id, mention .. "\n⌔︙لا يملك صورة بروفايل.", "md", true)
+      end
+    end
+  end
 end
 
 
