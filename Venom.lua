@@ -9820,7 +9820,29 @@ data = {
 {text = 'الغاء الامر ⌔',type = 'text'},
 },
 }
+   }
+if text == 'قسم الاذاعه ⌔' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'اذاعه للمجموعات ⌔',type = 'text'},{text = 'اذاعه خاص ⌔', type = 'text'},
+},
+{
+{text = 'اذاعه بالتوجيه ⌔',type = 'text'},{text = 'اذاعه بالتوجيه خاص ⌔', type = 'text'},
+},
+{
+{text = 'اذاعه بالتثبيت ⌔',type = 'text'},
+},
+{
+{text = 'الغاء الامر ⌔',type = 'text'},
+},
 }
+}
+return LuaTele.sendText(msg_chat_id, msg_id, "⌔︙اهلا بك في قسم الاذاعه\n⌔︙اختر نوع الاذاعه التي تريدها", "md", true, false, false, false, reply_markup)
+end
 end
 if text == 'تنظيف المشتركين ⌔' then
 if not msg.ControllerBot then 
