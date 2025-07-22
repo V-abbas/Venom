@@ -5644,18 +5644,32 @@ if text == 'المالك' then
       local user_id = UserInfo.id
       local username = UserInfo.username
 
-      local mention
+      local inline
       if username then
-        mention = "*⌔︙مالك المجموعة: @" .. username .. "*"
+        inline = LuaTele.replyMarkup{
+          type = 'inline',
+          data = {
+            {
+              {text = "⌔︙@" .. username .. " | " .. name, callback_data = "noop"}
+            }
+          }
+        }
       else
-        mention = "*⌔︙مالك المجموعة:* [" .. name .. "](tg://user?id=" .. user_id .. ")"
+        inline = LuaTele.replyMarkup{
+          type = 'inline',
+          data = {
+            {
+              {text = "⌔︙" .. name, callback_data = "noop"}
+            }
+          }
+        }
       end
 
-      -- إرسال الصورة (إن وُجدت)
-      if UserInfo.photo and UserInfo.photo.big and UserInfo.photo.big.id then
-        return LuaTele.sendPhoto(msg_chat_id, msg_id, UserInfo.photo.big.id, mention, "md")
+      -- إذا عنده صورة
+      if UserInfo.photo and UserInfo.photo.id then
+        return LuaTele.sendPhoto(msg_chat_id, msg_id, UserInfo.photo.id, nil, "md", false, false, false, false, inline)
       else
-        return LuaTele.sendText(msg_chat_id, msg_id, mention .. "\n⌔︙لا يملك صورة بروفايل.", "md", true)
+        return LuaTele.sendText(msg_chat_id, msg_id, "⌔︙المالك: " .. name .. "\n⌔︙لا يملك صورة بروفايل.", "md", true, false, false, false, inline)
       end
     end
   end
