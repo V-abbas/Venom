@@ -1365,23 +1365,27 @@ Filters = 'ملصق'
 Redis:sadd(Venom.."Venom:List:Filter"..msg_chat_id,'sticker:'..msg.content.sticker.sticker.id)  
 Redis:set(Venom.."Venom:Filter:Text"..msg.sender.user_id..':'..msg_chat_id, msg.content.sticker.sticker.id)  
 elseif text then
-if text:match("^/يوت (.+)$") then
-    local query = text:match("^/يوت (.+)$")
+if text:match("^يوت (.+)$") then
+    local query = text:match("^يوت (.+)$")
     local chat_id = msg.chat_id
     local message_id = msg.id
 
     local file_name = "yt_" .. os.time() .. ".mp3"
 
-    local command = 'yt-dlp --extract-audio --audio-format mp3 -o "' .. file_name .. '" "ytsearch1:' .. query .. '"'
+    -- استخدام المسار الكامل لـ yt-dlp
+    local command = '/usr/local/bin/yt-dlp --extract-audio --audio-format mp3 --user-agent "Mozilla/5.0" -o "' .. file_name .. '" "ytsearch1:' .. query .. '"'
+
+    -- تنفيذ أمر التحميل
     os.execute(command)
 
+    -- التحقق من وجود الملف
     local file = io.open(file_name, "r")
     if file then
         io.close(file)
         LuaTele.sendAudio(chat_id, message_id, 0, 1, nil, file_name, "🎧 تم تحميل الصوت:\n" .. query)
         os.remove(file_name)
     else
-        LuaTele.sendText(chat_id, message_id, 0, "❌ فشل تحميل الصوت. تأكد من كتابة الاسم بشكل صحيح أو من عمل yt-dlp.", 0, 'html')
+        LuaTele.sendText(chat_id, message_id, 0, "❌ فشل تحميل الصوت. تأكد من الاسم أو من عمل yt-dlp.", 0, 'html')
     end
 
     return
